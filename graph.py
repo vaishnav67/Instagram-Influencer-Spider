@@ -18,3 +18,5 @@ class Graph:
         tx.commit()
     def del_graph(self):
         NeoGraph.delete_all(self.graph)
+    def read_data(self, query):
+        return self.graph.run(query).to_data_frame()
